@@ -2,7 +2,7 @@ import { Application, Assets, Sprite} from "pixi.js";
 import { Camera } from "./camera";
 import { Scene } from "./scene";
 
-
+/* Example of using the library */
 (async () => {
   // Create a new application
   const app = new Application();
@@ -18,7 +18,7 @@ import { Scene } from "./scene";
     e.preventDefault();
   }, { passive: false });
 
-    const texture = await Assets.load("/assets/bunny.png");
+  const texture = await Assets.load("/assets/bunny.png");
 
   const bunny = new Sprite(texture);
   const scene =  new Scene({width : 1000, height : 1000, interactive : true})
@@ -27,20 +27,6 @@ import { Scene } from "./scene";
   const camera = new Camera(app.stage, scene)
 
   camera.attachControl()
-  // camera.on('wheel', (e) => {
-  //   e.preventDefault();
-  //   // Get the current zoom levelconst v = e.deltaY < 0 ? 1 : -1
-  //   const v = e.deltaY < 0 ? 1 : -1
-  //   const s = v * 40 / 1000
-
-  //   camera.setZoom(s, { x: e.clientX, y: e.clientY });
-    
-  // });
- 
-
-  
-
-
 
 })();
 
