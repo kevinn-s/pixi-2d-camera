@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="/style.css">
+    <title>PixiJS - Template</title>
+</head>
+
+<body>
+    <div id="app">
+        <div id="pixi-container"></div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+    <script id="solid-color-vertex-shader" type="x-shader/x-vertex">
+        attribute vec4 a_position;
+         
+        uniform mat4 u_matrix;
+         
+        void main() {
+          // Multiply the position by the matrix.
+          gl_Position = u_matrix * a_position;
+        }
+        </script>
+        <!-- fragment shader -->
+        <script id="solid-color-fragment-shader" type="x-shader/x-fragment">
+        precision mediump float;
+         
+        uniform vec4 u_color;
+         
+        void main() {
+          gl_FragColor = u_color;
+        }
+        </script>
+</body>
+</html>
